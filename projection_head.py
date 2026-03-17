@@ -7,7 +7,7 @@ https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision
 
 import math
 from functools import partial
-from turtle import forward
+# from turtle import forward
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

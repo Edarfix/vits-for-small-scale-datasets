@@ -34,9 +34,9 @@ class MLPHead(nn.Module):
             self.mlp = nn.Sequential(*layers)
         self.apply(self._init_weights)
         self.last_layer = weight_norm(nn.Linear(bottleneck_dim, out_dim, bias=False))
-        self.last_layer.weight_g.data.fill_(1)
+        self.last_layer.parametrizations.weight.original0.data.fill_(1.0)
         if norm_last_layer:
-            self.last_layer.weight_g.requires_grad = False
+            self.last_layer.parametrizations.weight.original0.requires_grad = False
 
     def _init_weights(self, m):
         if isinstance(m, nn.Linear):

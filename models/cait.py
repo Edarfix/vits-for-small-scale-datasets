@@ -3,8 +3,8 @@ import torch.nn as nn
 from functools import partial
 
 from timm.models.vision_transformer import Mlp, PatchEmbed , _cfg
-from timm.models.registry import register_model
-from timm.models.layers import trunc_normal_, DropPath
+from timm.models import register_model
+from timm.layers import trunc_normal_, DropPath
 from einops.layers.torch import Rearrange
 
 

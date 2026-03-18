@@ -149,7 +149,7 @@ python -m torch.distributed.launch --nproc_per_node=2 train_ssl.py --arch swin \
 With ViT architecture
 
 ```shell
-torchrun --nproc_per_node=1 train_ssl.py --arch vit \
+uv run torchrun --nproc_per_node=4 train_ssl.py --arch vit \
                                    --dataset CIFAR10 --image_size 32 \
                                    --patch_size 4  \
                                    --mlp_head_in 192  \
@@ -158,7 +158,8 @@ torchrun --nproc_per_node=1 train_ssl.py --arch vit \
                                    --global_crops_scale 0.7 1. \
                                    --out_dim 1024 \
                                    --batch_size_per_gpu 256  \
-                                   --output_dir "."
+                                   --output_dir "./checkpoint" \
+                                   --num_workers 2
 ```
 
 With Swin architecture
